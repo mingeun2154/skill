@@ -5,8 +5,11 @@
 * ## Spring Boot      
 * ## JavaScript      
 	* [간단한 소개](https://github.com/mingeun2154/skill/tree/main/JS/whatIsJS#javascript)
-	* [실행되는 과정](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork)
-	* [객체](https://github.com/mingeun2154/skill/tree/main/JS/object)
+	* [객체 생성](https://github.com/mingeun2154/skill/tree/main/JS/object/#javascript-object)
+	* [Prototype](https://github.com/mingeun2154/skill/tree/main/JS/object/#prototype)
+	* [Execution Context](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#execution-context-1)      
+	* [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack)      
+	* [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop)      
 	* [Promise](https://github.com/mingeun2154/skill/tree/main/JS/promise)
 * ## CSS
 * ## React      

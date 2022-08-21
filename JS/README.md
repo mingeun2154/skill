@@ -1,19 +1,1 @@
 # JavaScript
-
-## Contents		
-* ### [subheading](#)      
-* ### [subheading](#)      
-* ### [subheading](#)      
-* ### [subheading](#)      
-
-#    
-
-## subheading
-
-## subheading
-
-## subheading
-
-## subheading
-
-## subheading

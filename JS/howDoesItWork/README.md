@@ -1,15 +1,15 @@
 # How browsers execute JavaScript?
 
-브라우저에서 JavaScript가 실행되는 과정
-> 출처    
+JavaScript의 실행
+> references     
 > https://www.javascripttutorial.net/javascript-execution-context/    
-> https://www.javascripttutorial.net/javascript-call-stack/
+> https://www.javascripttutorial.net/javascript-call-stack/     
+> https://www.javascripttutorial.net/javascript-event-loop/    
 
 ## Contents		
-* ### [execution context](#)      
-* ### [subheading](#)      
-* ### [subheading](#)      
-* ### [subheading](#)      
+* ### [Execution Context](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#execution-context-1)      
+* ### [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack)      
+* ### [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop)      
 
 #    
 
@@ -20,7 +20,7 @@
 
 JavaScript engine이 자바스크립트 코드를 실행시킬 때, 엔진은 execution context를 생성한다.    
 
-execution context는 **두 가지 phase로 구성**된다(**creation phase**와 **execution phase**)
+execution context는 **두 가지 phase(단계)**를 거친다(**creation phase(초기화)**와 **execution phase(실행)**)
 
 아래의 코드가 실행되는 과정을 살펴보자.    
 
@@ -78,9 +78,123 @@ function execution context 초기화가 끝나면 엔진은 **이 context에 대
 > a에 10이 대입되고 함수의 결과가 global execution context로 return된다. 
 
 ## Call Stack
+> execution context(global, function execution context)들을 관리하는 자료구조이다.
 
-## subheading
+### 브라우저가 call stack을 사용하는 방법
+* JavaScript 파일을 실행하면 엔진은 global execution context를 생성해서 call stack의 top에 push한다.
+* 함수가 호출될때마다, 엔진은 **function execution context를 생성하고 call stack에 push하고, 함수를 실행**한다.
+* 함수가 다른 함수를 호출할 경우, 엔진은 function execution context를 생성하고 call stack에 push하고, 함수를 실행한다.    
+새로 push된 함수가 종료되면 그 context는 스택에서 제거되고 이전에 실행하던 함수를 이어서 실행한다.
+* script는 call stack이 빌 때까지 실행된다.
 
-## subheading
+### call stack example
 
-## subheading
+```JavaScript
+function add(a, b) {
+    return a + b;
+}
+
+function average(a, b) {
+    return add(a, b) / 2;
+}
+
+let x = average(10, 20);
+```
+
+* global execution context(`main()` 또는 `global()`로 표현된다.)
+	* creation phase - window, this, 전역변수와 함수 등록
+	* execution phase - 코드를 한 줄 씩 실행
+* `average()` 함수에 대한 context를 생성하여 call stack에 추가.
+	* 엔진은 call stack의 top에 있는 `average()` 함수를 실행한다.
+* `add()` 함수에 대한 context를 생성하여 call stack에 추가한다.
+	* `add()` 함수가 실행, 종료되고 스택에서 제거된다.
+* 스택의 top에 있는 `average()`가 다시 실행된다.
+
+<img src="./img/call-stack-flow.jpeg" alt="콜 스택의 상태">
+
+> 예시 코드가 실행되는 동안의 call stack의 변화.   
+> call stack의 top에 있는 함수가 현재 실행중인 함수이다.
+
+<img src="./img/inside-call-stack.jpeg" alt="context들의 상태">
+
+> 예시 코드가 실행되는 과정을 좀 더 자세히 나타낸 그림.   
+
+모든 execution context들은 **초기화(symbol 등록, undefined로 초기화)**, **실행(symbol에 값을 대입하고 계산)의 단계**를 거친다.
+
+### Stack Overflow
+**call stack의 크기는 고정**되있다. (크기는 host environment에 따라 다르다.)
+
+execution context가 call stack의 크기보다 많아지면 stack overflow error가 발생한다.
+
+```JavaScript
+function fn() {
+    fn();
+}
+
+fn(); // stack overflow
+```
+
+## Event Loop
+
+JavaScript는 **single-threaded** programming language이다. (JavaScript로는 **한 번에 하나의 작업(함수)만 실행**할 수 있다.)
+
+자바스크립트 엔진은 다음과 같은 과정을 반복하며 코드를 위에서부터 아래로 한 줄 씩 실행한다.
+* **creation phase** - execution context를 만들어서 call stack에 push.
+* **execution phase** - call stack의 top에 있는 함수를 실행하고 스택에서 제거한다.
+
+### blocking function
+**실행시간이 긴** 함수. 해당 시간동안 웹 페이지의 모든 interaction이 차단된다. (사용자가 어딜 클릭해도 반응하지 않는다.)
+
+### example : blocking function
+
+```JavaScript
+function task(message) { // blocking function
+    // emulate time consuming task
+    let n = 10000000000;
+    while (n > 0){
+        n--;
+    }
+    console.log(message);
+}
+
+console.log('Start script...');
+task('Call an API');
+console.log('Done!');
+
+// 실행결과
+Start script.... // 13초 뒤 다음 문장이 출력되었다. 13초 동안 웹사이트(유튜브) 어디를 클릭해도 반응이 없었다.
+Call an API.
+Done!
+```
+
+### example : callback
+> callback이란 **나중에 실행하기 위해** 다른 함수에게 인자로서 넘겨주는 함수이다. 
+
+```JavaScript
+console.log('Start script...');
+
+setTimeout(() => {
+    task('Download a file.');
+}, 1000);
+
+console.log('Done!');
+
+// 실행결과
+Start script.... 
+Done! // 13초 뒤 다음 문장이 출력되었다. 13초 동안 반응이 없는 것은 동일했다.
+Call an API.
+```
+위의 코드에서는 `Start script...` 와 `Done!` 이 바로 출력된다.
+
+앞서 말했듯, JavaScript 엔진은 한 번에 하나의 작업만 할 수 있다. 
+
+조금 더 정확히 말하자면, **JavaScript runtime**은 한 번에 한 가지 일만 할 수 있다.
+
+웹 브라우저는 JavaScript 뿐만 아니라 다른 component를 가지고 있다.
+
+프로그래머가 `setTimeout()`, `fetch()`, `eventListner()` 등을 호출하면 **브라우저는 이 작업들을 동시에, 비동기적으로 처리한다.** 
+
+`setTimeout()`, fetch request, DOM event는 모두 웹 브라우저의 **Web APIs**의 일부분이다.
+
+### example : setTimeout()의 실행 과정
+
