@@ -8,8 +8,8 @@
 	* [객체 생성](https://github.com/mingeun2154/skill/tree/main/JS/object/#javascript-object)
 	* [Prototype](https://github.com/mingeun2154/skill/tree/main/JS/object/#prototype)
 	* [Execution Context](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#execution-context-1)      
-	* [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack)      
-	* [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop)      
+	* [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack-1)      
+	* [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop-1)      
 	* [Promise](https://github.com/mingeun2154/skill/tree/main/JS/promise)
 * ## CSS
 * ## React      
