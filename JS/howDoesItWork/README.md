@@ -220,4 +220,3 @@ Call an API.
 `setTimeout()`에 전달된 인자가 `0`인 경우에도 위와 같은 순서로 실행된다.
 > 0초와 같은 특수한 케이스에 대한 별도의 handler는 없다.      
 > [특수한 케이스를 빠르게 처리하려고 할 수록 코드가 복잡해지고 성능면에서도 비효율적이다.](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#3-make-the-common-case-fast)
-

@@ -11,6 +11,7 @@
 	* [Execution Context](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#execution-context-1)      
 	* [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack-1)      
 	* [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop-1)      
+	* [Memory Architecture](https://github.com/mingeun2154/skill/tree/main/JS/memoryk#memory-architecture)
 	* [Promise](https://github.com/mingeun2154/skill/tree/main/JS/promise)
 * ## CSS
 * ## React      
