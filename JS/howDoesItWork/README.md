@@ -7,11 +7,21 @@ JavaScript의 실행
 > https://www.javascripttutorial.net/javascript-event-loop/    
 
 ## Contents		
+* ### [Runtime](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#runtime-1)      
 * ### [Execution Context](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#execution-context-1)      
-* ### [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack)      
-* ### [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop)      
+* ### [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack-1)      
+* ### [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop-1)      
 
 #    
+
+## Runtime
+> 실행중인 시점, 또는 실행환경을 의미한다.
+
+JavaScript의 런타임 구조
+
+<img src="./img/JS-runtime.jpeg" width="80%" alt="런타임 구조">
+
+> 큰 그림을 먼저 파악하고 각 부분들에 대해 알아보자.
 
 ## Execution Context
 > 상대방의 말을 이해하려면 맥락을 알고 있어야 한다. 똑같은 단어라도 맥락에 따라 의미가 달라지기 때문이다.    
@@ -196,5 +206,18 @@ Call an API.
 
 `setTimeout()`, fetch request, DOM event는 모두 웹 브라우저의 **Web APIs**의 일부분이다.
 
-### example : setTimeout()의 실행 과정
+### example : setTimeout()의 실행
+* 코드를 실행하다가 `setTimeout()` 함수를 만난다.
+* `setTimeout()` 에 대한 context를 만들어 stack에 넣고 실행한다.
+	* Web API가 1초를 측정하는 timer를 생성한다. `setTimeout()`이 stack에서 제거된다.
+* `console.log('Done!')` 이 실행된다. **동시에 timer는 시간을 재고 있다.**
+* timer가 만료되면 Web API에 의해 `task()`가 callback queue에 삽입된다.
+* event loop는 지속적으로 callback queue와 call stack을 감시한다.
+* **call stack에 더 이상 실행함 함수가 없는 경우**, event loop는 callback queue의 함수를 call stack에 넣는다.
+
+<img src="./img/setTimeout.jpeg" width="80%" alt="setTimeout 실행">
+
+`setTimeout()`에 전달된 인자가 `0`인 경우에도 위와 같은 순서로 실행된다.
+> 0초와 같은 특수한 케이스에 대한 별도의 handler는 없다.      
+> [특수한 케이스를 빠르게 처리하려고 할 수록 코드가 복잡해지고 성능면에서도 비효율적이다.](https://github.com/mingeun2154/CS/tree/main/ComputerArchitecture/eightGreatIdea#3-make-the-common-case-fast)
 
