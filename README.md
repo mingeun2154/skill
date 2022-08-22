@@ -5,7 +5,7 @@
 * ## Spring Boot      
 * ## JavaScript      
 	* [간단한 소개](https://github.com/mingeun2154/skill/tree/main/JS/whatIsJS#javascript)
-	*  [Data Type](https://github.com/mingeun2154/skill/tree/main/JS/basic/data-type-1)      
+	* [Data Type](https://github.com/mingeun2154/skill/tree/main/JS/basic#data-type-1)      
 	* [객체 생성](https://github.com/mingeun2154/skill/tree/main/JS/object/#javascript-object)
 	* [Prototype](https://github.com/mingeun2154/skill/tree/main/JS/object/#prototype)
 	* [Runtime](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#runtime-1)      
