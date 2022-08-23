@@ -8,12 +8,10 @@
 	* [Data Type](https://github.com/mingeun2154/skill/tree/main/JS/basic#data-type-1)      
 	* [객체 생성](https://github.com/mingeun2154/skill/tree/main/JS/object/#javascript-object)
 	* [Prototype](https://github.com/mingeun2154/skill/tree/main/JS/object/#prototype)
-	* [Runtime](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#runtime-1)      
-	* [Execution Context](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#execution-context-1)      
-	* [Call Stack](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#call-stack-1)      
-	* [Event Loop](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#event-loop-1)      
-	* [Memory Architecture](https://github.com/mingeun2154/skill/tree/main/JS/memoryk#memory-architecture)
-	* [Promise](https://github.com/mingeun2154/skill/tree/main/JS/promise)
+	* [브라우저는 어떻게 자바스크립트를 실행하는가](https://github.com/mingeun2154/skill/tree/main/JS/howDoesItWork#runtime-1)      
+	* [메모리 구조](https://github.com/mingeun2154/skill/tree/main/JS/memoryk#memory-architecture)
+	* [Promise](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise)
+	* [비동기와 동기적 실행](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise)
 * ## CSS
 * ## React      
 
