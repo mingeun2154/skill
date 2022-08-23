@@ -1,7 +1,7 @@
 # JavaScript Basic
 
 자바스크립트의 기본
-> references    
+> ### references 🔗  
 > https://www.javascripttutorial.net/javascript-data-types/   
 
 ## Contents		

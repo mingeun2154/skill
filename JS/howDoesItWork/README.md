@@ -1,7 +1,7 @@
 # How browsers execute JavaScript?
 
 JavaScript의 실행
-> references     
+> ### references 🔗   
 > https://www.javascripttutorial.net/javascript-execution-context/    
 > https://www.javascripttutorial.net/javascript-call-stack/     
 > https://www.javascripttutorial.net/javascript-event-loop/    

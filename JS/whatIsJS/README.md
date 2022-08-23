@@ -1,7 +1,10 @@
 # JavaScript
 
-JavaScript란 무엇인가
-> 출처 
+JavaScript란 무엇인가   
+
+> ### references 🔗    
+
+
 
 ## Contents		
 * ### [기능](https://github.com/mingeun2154/skill/tree/main/JS/whatIsJS#function)      
