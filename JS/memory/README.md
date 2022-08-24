@@ -8,10 +8,10 @@ JavaScript 엔진은 **Heap**과 **Stack**을 관리한다. 이 두 종류의 �
 > https://codeburst.io/explaining-value-vs-reference-in-javascript-647a975e12a0  
 
 ## Contents		
-* ### [Stack](#)      
-* ### [Heap](#)      
-* ### [Hoisting](#)      
-* ### [Reference](#)
+* ### [Stack](https://github.com/mingeun2154/skill/tree/main/JS/memory#stack-1)      
+* ### [Heap](https://github.com/mingeun2154/skill/tree/main/JS/memory#heap-1)      
+* ### [Hoisting](https://github.com/mingeun2154/skill/tree/main/JS/memory#hoisting-1)      
+* ### [Reference](https://github.com/mingeun2154/skill/tree/main/JS/memory#reference-1)
 
 #    
 
