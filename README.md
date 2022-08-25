@@ -1,6 +1,11 @@
 # 기술 🛠
 웹 개발에 필요한 기술에 대한 이해
 
+* ## WEB
+	* [WEB Server](#)
+	* [WAS](#)
+	* [Servlet](#)
+	* [REST API](#)
 * ## Java      
 	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda)
 	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface)
