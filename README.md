@@ -2,13 +2,13 @@
 웹 개발에 필요한 기술에 대한 이해
 
 * ## WEB
-	* [WEB Server](#)
-	* [WAS](#)
-	* [Servlet](#)
-	* [REST API](#)
+	* [WEB Server](#) [미완성]
+	* [WAS](#) [미완성]
+	* [Servlet](#) [미완성]
+	* [REST API](#) [미완성]
 * ## Java      
-	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda)
-	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface)
+	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda) [미완성]
+	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface) [미완성]
 * ## Spring Boot      
 * ## JavaScript      
 	* [간단한 소개](https://github.com/mingeun2154/skill/tree/main/JS/whatIsJS#javascript)
