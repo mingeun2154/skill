@@ -7,7 +7,7 @@
 
 ## Contents		
 * ### [Promise 생성](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise-1)      
-* ### [Promise의 상태](file:///Users/mingeun/portfolio/skill/JS/promise/README.md#promise%EC%9D%98-%EC%83%81%ED%83%9C-1)
+* ### [Promise의 상태](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise%EC%9D%98-%EC%83%81%ED%83%9C-1)
 * ### [then()](https://github.com/mingeun2154/skill/tree/main/JS/promise#then-1)      
 * ### [catch()](https://github.com/mingeun2154/skill/tree/main/js/promise#catch-1)
 * ### [finally()](https://github.com/mingeun2154/skill/tree/main/js/promise#finally-1)
@@ -95,4 +95,76 @@ promise.then(
 `catch(f)`는 `then(null, f)`과 완벽히 같다.
 
 ## finally()
+`Promise`가 처리되기만 하면 항상 실행된다.
 
+화면에 더 이상 그만 표시되어도 되는 loading indicator를 멈추는 경우와 같이, **결과가 어떻든 마무리가 필요한 경우**에 유용하다.
+
+* `then()`에 전달되는 핸들러와 다르게 인수가 없다.(성공, 실패 여부를 몰라도 되기 때문이다.)
+
+* `finally` 핸들러는 자동으로 **다음 핸들러에 결과와 에러를 전달**한다.
+
+```JavaScript
+new Promise((resolve, reject) => {
+  setTimeout(() => resolve("결과"), 2000)
+})
+  .finally(() => alert("프라미스가 준비되었습니다."))
+  .then(result => alert(result)); // <-- .then에서 result를 다룰 수 있음
+```
+
+`finally`는 `Promise`의 결과를 처리하기 위해 만들어진 게 아니다.  결과는 `Promise`를 **통과**한다.
+
+## Promise Chaining
+promise가 resolve한 결과가 `then` 핸들러의 chain(사슬)을 따라 계속 전달된다. 
+
+`then`은 `Promise`를 반환한다. 핸들러가 반환하는 값이 `Promise`의 `result`가 된다.
+
+```JavaScript
+new Promise(function(resolve, reject) {
+    setTimeout(() => resolve(1), 1000);
+}).then((result) => {
+    result=result*2;
+    console.log(result);
+    return result;
+}).then((result) => {
+    result=result*2;
+    console.log(result);
+    return result;
+}).then((result) => {
+    result=result*2;
+    console.log(result);
+    return result;
+});
+```
+
+### 핸들러가 Promise를 반환하는 경우
+`then(handler)`의 handler가 `Promise`를 생성하거나 반환하는 경우도 있다.
+
+이 경우 `Promise`를 반환하는 핸들러 이후의 핸들러들은 이 `Promise`가 처리될 때까지 기다렸다가 그 결과를 받는다.
+
+```JavaScript
+new Promise(function(resolve, reject) {
+
+  setTimeout(() => resolve(1), 1000);
+
+}).then(function(result) {
+
+  alert(result); // 1
+
+  return new Promise((resolve, reject) => { // (*)
+    setTimeout(() => resolve(result * 2), 1000);
+  });
+
+}).then(function(result) { // (**)
+
+  alert(result); // 2
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(result * 2), 1000);
+  });
+
+}).then(function(result) {
+
+  alert(result); // 4
+
+});
+```
