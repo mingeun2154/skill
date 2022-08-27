@@ -31,7 +31,7 @@ fetch는 자바스크립트가 제공하는 메서드이다. API 서버로 **htt
 
 ### example 
 
-<img src="./img/fetch-example.jpeg" width="80%" alt="fetch-example">
+<img src="./img/fetch-example.png" width="80%" alt="fetch-example">
 
 * `Promise.reject(reason)` - reject된 `Promise`를 반환한다.
 * `Response.ok` - HTTP 응답의 state code가 200~299면 true, 아니면 false이다.
