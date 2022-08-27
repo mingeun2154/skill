@@ -2,33 +2,69 @@
 
 > ### references 🔗  
 > React.js, 스프링 부트, AWS로 배우는 웹 개발 101		- 김다정 -    
-> https://www.w3schools.com/js/js_promise.asp
+> https://www.w3schools.com/js/js_promise.asp     
+> https://ko.javascript.info/promise-basics
 
 ## Contents		
-* ### [Promise란 무엇인가](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise-2)      
-* ### [사용 방법](https://github.com/mingeun2154/skill/tree/main/JS/promise#how-to-use)      
-* ### [Fetch API](https://github.com/mingeun2154/skill/tree/main/JS/promise#fetch-api-1)      
+* ### [Promise 생성](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise-1)      
+* ### [Promise의 상태](file:///Users/mingeun/portfolio/skill/JS/promise/README.md#promise%EC%9D%98-%EC%83%81%ED%83%9C-1)
+* ### [then()](https://github.com/mingeun2154/skill/tree/main/JS/promise#then-1)      
+* ### [catch()](https://github.com/mingeun2154/skill/tree/main/js/promise#catch-1)
+* ### [finally()](https://github.com/mingeun2154/skill/tree/main/js/promise#finally-1)
+* ### [Promise Chaining](https://github.com/mingeun2154/skill/tree/main/JS/promise#promise-chaining-1)
 
 ## Promise
-**비동기 작업의 결과값**을 감싸는 객체이다. 비동기 작업의 결과(success value 또는 failure reason)에 대한 콜백을 지정할 수 있다.
+**원하는 작업(executor)과 그 결과값**을 감싸는 객체이다. executor를 실행시키고 그 결과를 표현한다.
 
-`Promise`가 감싸는 값을 `Promise`**객체가 resolve한다**라고 표현한다.
+주로 **비동기 작업**을 실행시킨다.
 
-지정된 함수는 비동기 함수의 실행이 완료될 때까지 기다렸다가 반환하는 값을 인수로 받아 실행된다. 
+`Promise`객체는 아래와 같은 방식으로 만들 수 있다.
 
-aysnchronous 함수는 `Promise` 객체를 반환함으로 동기적(synchronous) 함수처럼 사용된다. 
+생성자에 전달되는 함수는 **executor**라고 하며 **결과를 만들어내는 코드**를 포함한다.
 
+executor는 **객체가 생성될 때 자동으로 실행**된다.
+
+`resolve`와 `reject`는 JavaScript가 제공하는 콜백이다. 개발자는 신경쓰지 않고 executor 내부의 코드만 작성하면 된다.
+
+```JavaScript
+let promise = new Promise(function(resolve, reject){
+		// executor
+		// case1. 성공 - resolve(value) 호출
+		// case2. 실패 - reject(error) 호출
+		});
+```
+
+executor 내부에서는 반드시 `resolve()`와 `reject()`함수 둘 중 하나를 호출해야 한다.
+* `resolve(value)` - 작업이 성공적으로 끝난 경우 **그 결과를 표현**하는 `value`와 함께 호출한다.
+* `reject(error)` - 에러가 발생한 경우 **에러를 표현**하는 `error`와 함께 호출한다.
+
+<img src="./img/promise-example-1.png" width="50%" alt="promise-example-1">
+
+* executor : `promise` 생성과 동시에 `setTimeout()`이 전달받은 함수가 실행된다. `flag`가 3의 배수이면 성공, 아니면 실패이다. 
+* `result` : `promise`가 실행하는 executor의 실행결과를 표현한다.
+* `reject()`, `resolve()`를 호출함으로써 main thread에 실행 결과를 알려준다(`result`객체가 전달된다.)
+
+## Promise의 상태
 `Promise` 객체는 **세 가지 상태**를 가진다.
 * pending : fulfilled도 아니고 reject 상태도 아닌 초기상태
-* fulfilled : operation이 성공적으로 완료된 상태
-* rejected : operation이 실패한 상태
+* fulfilled : executor의 실행 성공적으로 완료된 상태
+* rejected : executor의 실행이 실패한 상태
 
-세 가지 상태중 pending이 아닌 상태를 **객체가 settled되었다**라고 표현한다.
+executor의 실행이 `Promise`의 상태를 둘 중 하나로 변화시킨다.
 
-## How to use
+<img src="./img/executor.png" width="70%" alt="executor의 실행">
+
+> `state`와 `result` 프로퍼티는 내부 프로퍼티로 개발자가 직접 접근할 수 없다.   
+> `then`, `catch`, `finally`를 사용하면 접근할 수 있다.
+
+이렇게 resolved(이행) 또는 rejected(거부)된 상태의 `Promise`객체는 **settled Promise**(처리된 Promise)라고 한다. 
+
+반대는 pending(대기상태) Promise이다.
+
+## then()
 `Promise.then()` 메서드를 사용해서 성공, 실패에 대한 콜백을 지정할 수 있다. 둘 다 필 수는 아니다.
 
-`then()`**으로 전달하는 메서드의 parameter에는** `Promise`**가 감싼 객체가 전달된다.**
+`then()`**으로 전달하는 메서드의 parameter에는** `Promise`**가 resolve한 값이 전달된다.**
 
 ```JavaScript
 myPromise.then(
@@ -37,31 +73,26 @@ myPromise.then(
 );
 ```
 
-## Fetch API
-fetch는 자바스크립트가 제공하는 메서드이다. API 서버로 **http 요청을 송신 및 수신할 수 있도록 도와준다.**
+`then()`의 첫 번째 인수는 promise가 resolve(성공)했을 때 실행되는 함수이다. 실행 결과를 인수로 받는다.
 
-`fetch()` 함수는 `Promise`객체를 반환한다. 따라서 `then()`을 통해 콜백을 전달해 응답을 처리할 수 있다.
+`then()`의 두 번째 인수는 promise가 rejected(실패)되었을 때 실행되는 함수이다. 인수로 에러를 받는다.
 
-`catch()` 메서드를 사용해서 **rejected case**에 대한 콜백을 지정할 수도 있다. 
+```JavaScript
+let promise = new Promise(function(resolve, reject) {
+  setTimeout(() => reject(new Error("에러 발생!")), 1000);
+});
 
-> ### 🚨 `catch()`를 사용할때 주의할 점
-> 
-> Fetch API의 Promise는 **네트워크 오류** 또는 **CORS 오류**에 대해서만 TypeError를 발생시키고 reject한다.    
-> 
-> 흔히 볼 수 있는 404 error는 네트워크 오류는 아니므로 `catch()`로는 handle할 수 없다. 
+// reject 함수는 .then의 두 번째 함수를 실행합니다.
+promise.then(
+  result => alert(result), // 실행되지 않음
+  error => alert(error) // 1초 후 "Error: 에러 발생!"을 출력
+);
+```
 
-`fetch()`함수는 JSON 을 바로 반환하지 않고 `Response`**객체를 resolve하는** `Promise`**객체를 반환한다.**
+> `reject()`함수로 전달할 error는 `Error`객체를 상속하는 객체를 사용하는 것이 좋다.
 
-`Response`객체는 JSON body가 아닌 **entire HTTP response**를 반환한다.
+## catch()
+`catch(f)`는 `then(null, f)`과 완벽히 같다.
 
-`Response.json()`메서드는 JSON 형태의 text를 **JavaScript object**로 parsing하고 **이 객체를 감싸는 `Promise`를 반환**한다.
+## finally()
 
-### example 
-
-<img src="./img/fetch-example.jpeg" width="80%" alt="fetch-example">
-
-* `Promise.reject(reason)` - reject된 `Promise`를 반환한다.
-* `Response.ok` - HTTP 응답의 state code가 200~299면 true, 아니면 false이다.
-* `Promise.catch()` - rejected `Promise`에 대한 콜백을 등록한다. **최종적으로 Promise를 전달받는곳에서 호출한다.** 
-
-<img src="./img/catch.png" width="50%" alt="catch">
