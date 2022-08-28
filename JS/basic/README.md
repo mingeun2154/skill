@@ -138,84 +138,85 @@ console.log(typeof(_bigint)); // bigint
 ## Declare Variable
 * `let` - immediate(가장 가까운) block scoped 변수 선언. 초기화는 선택. 
 
-	```JavaScript
-	function run() {
-  var foo = "Foo";
-  let bar = "Bar";
+```JavaScript
+function run() {
+var foo = "Foo";
+let bar = "Bar";
 
-  console.log(foo, bar); // Foo Bar
+console.log(foo, bar); // Foo Bar
 
-  {
-    var moo = "Mooo" // 이 함수 전체에서 유효하다.
-    let baz = "Bazz"; // 이 블럭 내부에서만 유효하다.
-    console.log(moo, baz); // Mooo Bazz
-  }
+{
+	var moo = "Mooo" // 이 함수 전체에서 유효하다.
+	let baz = "Bazz"; // 이 블럭 내부에서만 유효하다.
+	console.log(moo, baz); // Mooo Bazz
+}
 
-  console.log(moo); // Mooo
-  console.log(baz); // ReferenceError
-	}
+console.log(moo); // Mooo
+console.log(baz); // ReferenceError
+}
 
-	run();
- ```
+run();
+```
 
- ```JavaScript
- function checkHoisting() {
-		console.log(foo); // ReferenceError
-		let foo = "Foo";
-		console.log(foo); // Foo
-	}
-	checkHoisting();
-	```
-	> 초기화 하기 전에 접근 할 수 없다.
+```JavaScript
+function checkHoisting() {
+	console.log(foo); // ReferenceError
+	let foo = "Foo";
+	console.log(foo); // Foo
+}
+checkHoisting();
+```
+
+> 초기화 하기 전에 접근 할 수 없다.
 
 
 * `var` - immediate function scoped 변수 선언. 초기화는 선택. 
 
-	```JavaScript
-	var x = 1;
+```JavaScript
+var x = 1;
 
-	if (x === 1) {
-		var x = 2; // 변수 x를 재할당(덮어써진다.)
-		console.log(x);
-		// expected output: 2
-	}
-
+if (x === 1) {
+	var x = 2; // 변수 x를 재할당(덮어써진다.)
 	console.log(x);
 	// expected output: 2
-	```
-	> **재할당**이 가능하다.
+}
 
-	```JavaScript
-	var funcs = [];
-	// let's create 3 functions
-	for (var i = 0; i < 3; i++) {
-		// and store them in funcs
-		funcs[i] = function() {
-			// each should log its value.
-			console.log("My value: " + i);
-		};
-	}
-	for (var j = 0; j < 3; j++) {
-		// and now let's run each one to see
-		funcs[j]();
-	}
-	```
-	"My value: 3"이 세 번 출력된다. ❓이유는 잘 모르겠다.
-	> `var` 키워드는 안 쓰는게 좋겠다...
+console.log(x);
+// expected output: 2
+```
+> **재할당**이 가능하다.
 
-	```JavaScript
-	var foo = "Foo";  // globally scoped
-	let bar = "Bar"; // not allowed to be globally scoped
+```JavaScript
+var funcs = [];
+// let's create 3 functions
+for (var i = 0; i < 3; i++) {
+	// and store them in funcs
+	funcs[i] = function() {
+		// each should log its value.
+		console.log("My value: " + i);
+	};
+}
+for (var j = 0; j < 3; j++) {
+	// and now let's run each one to see
+	funcs[j]();
+}
+```
+"My value: 3"이 세 번 출력된다. ❓이유는 잘 모르겠다.
+> `var` 키워드는 안 쓰는게 좋겠다...
 
-	console.log(window.foo); // Foo
-	console.log(window.bar); // undefined
-	```
-	> `let` 키워드로 선언한 변수는 global object의 property가 될 수 없다. (전역변수가 될 수 없다.)
+```JavaScript
+var foo = "Foo";  // globally scoped
+let bar = "Bar"; // not allowed to be globally scoped
+
+console.log(window.foo); // Foo
+console.log(window.bar); // undefined
+```
+> `let` 키워드로 선언한 변수는 global object의 property가 될 수 없다. (전역변수가 될 수 없다.)
 
 
 * `const` - `let`과 비슷하다. block scoped 변수를 생성하지만 초기화가 필수이고 값을 변경할 수 없다.
 *  생략 - 전역변수 생성
-	```JavaScript
-	num = 10;
-	console.log(num); // 10 출력
-	```
+```JavaScript
+num = 10;
+console.log(num); // 10 출력
+```
