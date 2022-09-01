@@ -2,10 +2,10 @@
 웹 개발에 필요한 기술에 대한 이해
 
 * ## WEB
-	* [인터넷과 웹](#)
-	* [WEB Server](#) [https://github.com/mingeun2154/skill/tree/main/web/webServer#web-server]
+	* [인터넷과 웹](https://github.com/mingeun2154/skill/tree/main/web/internet-web#internet-and-web)
+	* [WEB Server](https://github.com/mingeun2154/skill/tree/main/web/webServer#web-server)
 	* [WAS](https://github.com/mingeun2154/skill/tree/main/web/webServer#wasweb-application-server)
-	* [Web Application Architecture] (https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#web-application-architecture)
+	* [Web Application Architecture](https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#web-service-architecture)
 	* [REST API](https://github.com/mingeun2154/skill/tree/main/web/REST#rest-api) [미완성]
 * ## Java      
 	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda) [미완성]
