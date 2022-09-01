@@ -3,10 +3,10 @@
 
 * ## WEB
 	* [인터넷과 웹](#)
-	* [WEB Server](#) [미완성]
-	* [WAS](#) [미완성]
-	* [Servlet](#) [미완성]
-	* [REST API](#) [미완성]
+	* [WEB Server](#) [https://github.com/mingeun2154/skill/tree/main/web/webServer#web-server]
+	* [WAS](https://github.com/mingeun2154/skill/tree/main/web/webServer#wasweb-application-server)
+	* [Web Application Architecture] (https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#web-application-architecture)
+	* [REST API](https://github.com/mingeun2154/skill/tree/main/web/REST#rest-api) [미완성]
 * ## Java      
 	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda) [미완성]
 	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface) [미완성]

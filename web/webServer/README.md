@@ -6,12 +6,11 @@
 > https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%EC%9E%85%EB%AC%B8-%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard    
 
 ## Contents		
-* ### [서버와 클라이언트](#)      
-* ### [웹 컨텐츠](#)      
-* ### [Web Server](#)      
-* ### [WAS](#)      
-* ### [Servlet](#)
-* ### [Sevlet과 일반 객체의 차이점](#)
+* ### [서버와 클라이언트](https://github.com/mingeun2154/skill/tree/main/web/webServer#server-and-client)      
+* ### [웹 컨텐츠](https://github.com/mingeun2154/skill/tree/main/web/webServer#web-content)      
+* ### [Web Server](https://github.com/mingeun2154/skill/tree/main/web/webServer#web-server-2)      
+* ### [WAS](https://github.com/mingeun2154/skill/tree/main/web/webServer#wasweb-application-server)      
+* ### [Servlet](https://github.com/mingeun2154/skill/tree/main/web/webServer#servlet-1)
 
 #    
 
@@ -63,8 +62,6 @@ Web container, **Servlet Container**라고도 한다.
 
 > spring boot application을 실행시키면 별도의 설정 없이 톰캣 내장서버가 실행되고 spring container가 실행된다.    
 > spring에 비해 굉장히 간단하다. 복잡한 설정 없이 서비스 개발에만 집중할 수 있다.	
-
-하여튼 요즘 사람들은 불편한 걸 못 참는다. 🤣
 
 ## Servlet
 Java EE 표준 기술 중 하나이다. java.servlet 패키지에 정의되어있는 클래스들이다.
