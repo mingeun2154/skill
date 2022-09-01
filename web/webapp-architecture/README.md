@@ -6,10 +6,10 @@
 웹 서비스의 구조
 
 ## Contents		
-* ### [세 가지 구조](#)      
-* ### [역할 분담](#)
-* ### [서블릿 컨테이너가 하는 일] (#)
-* ### [servlet의 life-cycle](#)
+* ### [세 가지 구조](https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#three-architectures)      
+* ### [역할 분담](https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#was-and-web-server)
+* ### [서블릿 컨테이너가 하는 일] (https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#servlet-container)
+* ### [servlet의 life-cycle](https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#life-cycle-of-servlet)
 
 #    
 
