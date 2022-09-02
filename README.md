@@ -7,9 +7,9 @@
 	* [WAS](https://github.com/mingeun2154/skill/tree/main/web/webServer#wasweb-application-server)
 	* [Web Application Architecture](https://github.com/mingeun2154/skill/tree/main/web/webapp-architecture#web-service-architecture)
 	* [SPA](https://github.com/mingeun2154/skill/tree/main/web/spa#spa)
-	* [REST](https://github.com/mingeun2154/skill/tree/main/web/REST#rest) [미완성]
+	* [REST](https://github.com/mingeun2154/skill/tree/main/web/REST#rest) [작성중]
 	* [REST API](https://github.com/mingeun2154/skill/tree/main/web/REST-API#rest-api) [미완성]
-	* [HTTP](https://github.com/mingeun2154/skill/tree/main/web/HTTP#http)
+	* [HTTP](https://github.com/mingeun2154/skill/tree/main/web/HTTP#http) [미완성]
 * ## Java      
 	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda) [미완성]
 	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface) [미완성]
