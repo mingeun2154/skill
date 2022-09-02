@@ -6,8 +6,8 @@
 > Architectural styles and the design of network-based software architecture 𝐂𝐇𝐀𝐏𝐓𝐄𝐑 𝟓
 
 ## Contents		
-* ### [WEB](#)      
-* ### [REST가 지켜야할 제약조건들](#)      
+* ### [WEB](https://github.com/mingeun2154/skill/tree/main/web/REST#web-1)      
+* ### [REST가 지켜야할 제약조건들](https://github.com/mingeun2154/skill/tree/main/web/REST#hybrid-architecture-style)      
 * ### [Uniform Interface](#)      
 
 #    
@@ -26,12 +26,12 @@ REST는 분산 하이퍼미디어 시스템(예를 들면 웹)을 위한 아키�
 
 > 아키텍쳐 스타일이란 제약 조건(constraint)들의 집합이다.
 
-* [Client-Server](#)
-* [Stateless](#)
-* [Cache](#)
-* [Uniform Interface](#)
-* [Layered System](#)
-* [Code-On-Demand](#)
+* [Client-Server](https://github.com/mingeun2154/skill/tree/main/web/REST#client-server)
+* [Stateless](https://github.com/mingeun2154/skill/tree/main/web/REST#stateless)
+* [Cache](https://github.com/mingeun2154/skill/tree/main/web/REST#cache)
+* [Uniform Interface](https://github.com/mingeun2154/skill/tree/main/web/REST#uniform-interface-1)
+* [Layered System](https://github.com/mingeun2154/skill/tree/main/web/REST#layered-system)
+* [Code-On-Demand](https://github.com/mingeun2154/skill/tree/main/web/REST#code-on-demand)
 
 ### Client-Server
 REST에 더해지는 첫 번째 제약조건은 client-server architectural style이다. 이 제약조건의 원칙은 **관심사(concern)의 분리**이다.
