@@ -13,6 +13,9 @@
 * ## Java      
 	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda) [미완성]
 	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface) [미완성]
+	* [Generics](https://github.com/mingeun2154/skill/tree/main/Java/generics#generics) [미완성]
+	* [lombok](https://github.com/mingeun2154/skill/tree/main/Java/lombok#lombok) [미완성]
+
 * ## Spring Boot      
 	* [프로젝트 생성](https://github.com/mingeun2154/skill/tree/main/SpringBoot/createProject#create-new-project)
 	* [Controller](https://github.com/mingeun2154/skill/tree/main/SpringBoot/controller#controller) [작성중]
