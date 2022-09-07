@@ -1,6 +1,8 @@
 # 기술 🛠
 웹 개발에 필요한 기술에 대한 이해
 
+* ## script를 이용한 자동화
+	* [Makefile](https://github.com/mingeun2154/skill/tree/main/script/Makefile#Makefile) [작성중]
 * ## WEB
 	* [인터넷과 웹](https://github.com/mingeun2154/skill/tree/main/web/internet-web#internet-and-web)
 	* [WEB Server](https://github.com/mingeun2154/skill/tree/main/web/webServer#web-server)
@@ -32,4 +34,4 @@
 * ## CSS
 * ## React      
 	* [프로젝트 생성](https://github.com/mingeun2154/skill/tree/main/React/init#start-react-project)
-
+	* [Component](#) [미완성]
