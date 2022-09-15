@@ -13,6 +13,7 @@
 	* [REST API](https://github.com/mingeun2154/skill/tree/main/web/REST-API#rest-api) [미완성]
 	* [HTTP](https://github.com/mingeun2154/skill/tree/main/web/HTTP#http) [미완성]
 * ## Java      
+	* [직렬화](https://github.com/mingeun2154/skill/tree/main/Java/serialization#serialization)
 	* [람다 표현식](https://github.com/mingeun2154/skill/tree/main/Java/lambda#lambda) [미완성]
 	* [함수형 인터페이스](https://github.com/mingeun2154/skill/tree/main/functionalInterface#functional-interface) [미완성]
 	* [Generics](https://github.com/mingeun2154/skill/tree/main/Java/generics#generics) [미완성]
