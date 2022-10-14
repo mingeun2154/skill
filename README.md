@@ -1,5 +1,5 @@
 # 기술 🛠
-웹 개발에 필요한 기술에 대한 이해
+1차 전직(소프트웨어학과 전공 학생) 스킬
 
 * ## script를 이용한 자동화
 	* [Makefile](https://github.com/mingeun2154/skill/tree/main/script/Makefile#Makefile)
