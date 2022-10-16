@@ -1,13 +1,15 @@
 # Makefile
 
-**빌드를 간편**하게 할 수 있는 script file이다.
-> bash 명령어는 아니다.
+**빌드를 자동화** 할 수 있는 script file이다.
+
+OS에 맞는 명령어를 실행하도록 프로그래밍 할 수도 있다.
 
 ## Contents		
 * ### [GCC](https://github.com/mingeun2154/skill/tree/main/script/Makefile#gcc-1)
 * ### [Make](https://github.com/mingeun2154/skill/tree/main/script/Makefile#make-1)
 * ### [Makefile](https://github.com/mingeun2154/skill/tree/main/script/Makefile#makefile-2)
 * ### [예시](https://github.com/mingeun2154/skill/tree/main/script/Makefile#example)      
+* [platform-agnositc makefile 작성](#)
 
 #    
 
@@ -38,7 +40,7 @@ GNU 프로젝트의 일부로 개발되어 널리 쓰이고 있는 컴파일러�
 * `-g` : 바이너리 파일에 표준 디버깅 정보를 포함한다.
 * `-ggdb` : 바이너리 파일에 GNU 디버거인 GDB만 이해할 수 있는 다양한 디버깅 정보를 포함한다.
 * `-O [level]` : 컴파일 코드를 최적화 하며, 최적화 level을 지정한다. (1~3)
-* `-D[FOOl=[BAR]` : command line에서 BAR 값을 가지는 FOO라는 매크로를 정의한다.
+* `-D[FOO=BAR]` : command line에서 BAR 값을 가지는 FOO라는 매크로를 정의한다.
 * `static` : 정적 라이브러리에 링크
 * `-MM` : make 호환의 의존성 목록을 출력한다.
 * `-V` : 각 단계에서 사용되는 명령을 보여준다. (전처리, 컴파일, 어셈블, 링크)
@@ -103,4 +105,58 @@ glSetup.o : glSetup.cpp
 
 clean : 
 	rm -rf $(OBJS)
+```
+
+linux와 mac 환경에서 모두 실행될 수 있도록 수정했다.
+```
+CC = g++
+
+OS = $(shell uname)
+
+# For macOS
+ifeq ($(OS),Darwin)
+	INC = -I/opt/homebrew/Cellar/glfw/3.3.8/include -I/opt/homebrew/Cellar/glm/0.9.9.8/include 
+	LIB_NAME = -lglfw
+	LIBS = -L/opt/homebrew/Cellar/glfw/3.3.8/lib
+	FRAMEWORK = -framework OpenGL
+endif
+
+# for Linux
+ifeq ($(OS),Linux)
+	INC = -I/usr/include
+	LIB_NAME = -lglfw -lglut -lGL -lGLU
+	LIBS = 
+	FRAMEWORK = 
+endif
+
+OBJS_P = practice.o glSetup.o
+SRCS_P = practice.cpp glSetup.cpp
+
+OBJS_E = exercise.o glSetup.o
+SRCS_E = exercise.cpp glSetup.cpp
+
+# executable file name
+EXERCISE = exercise
+PRACTICE = practice
+
+all : $(EXERCISE) $(PRACTICE)
+
+######################### build practice ######################### 
+$(PRACTICE) : $(OBJS_P)
+	$(CC) $(LIBS) -o $@ $^ $(FRAMEWORK) $(LIB_NAME)
+
+practice.o : practice.cpp
+	$(CC) -c $< $(INC)
+######################### build exercise ######################### 
+$(EXERCISE) : $(OBJS_E)
+	$(CC) $(LIBS) -o $@ $^ $(FRAMEWORK) $(LIB_NAME)
+
+exercise.o : exercise.cpp
+	$(CC) -c $< $(INC)
+################################################################## 
+glSetup.o : glSetup.cpp
+	$(CC) -c $< $(INC)
+
+clean : 
+	rm -rf *.o
 ```
