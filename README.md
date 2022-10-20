@@ -1,5 +1,5 @@
 # 기술 🛠
-1차 전직(소프트웨어학과 전공 학생) 스킬
+프로그래밍에 필요한 여러 가지 
 
 * ## script를 이용한 자동화
 	* [Makefile](https://github.com/mingeun2154/skill/tree/main/script/Makefile#Makefile)
